@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tomato Disease Prediiction</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="container">
+        <header>
+            <h1>Tomato Disease Prediction</h1>
+            <p>Upload a Tomato leaf image and let our AI model classify it.</p>
+        </header>
+
+        <section class="upload-card">
+
+            <div class="upload-area" id="uploadArea">
+                <div class="upload-icon">📸</div>
+                <h3>Upload your image</h3>
+                <p>Drag and drop an image here or browse your device</p>
+
+                <input
+                    type="file"
+                    id="imageInput"
+                    accept="image/*"
+                    hidden
+                >
+
+                <button type="button" id="browseBtn">
+                    Choose Image
+                </button>
+            </div>
+
+            <div class="preview-container" id="previewContainer">
+                <img id="imagePreview" alt="Selected image preview">
+                <p id="fileName"></p>
+            </div>
+
+            <button id="predictBtn" disabled>
+                Classify Image
+            </button>
+
+            <div id="loading" class="loading hidden">
+                <div class="spinner"></div>
+                <p>Analyzing image, please wait...</p>
+            </div>
+
+            <div id="errorMessage" class="error hidden"></div>
+
+            <div id="resultContainer" class="result hidden">
+                <h2>Prediction Result</h2>
+
+                <div class="result-item">
+                    <span>Predicted Class</span>
+                    <h3 id="predictedClass">-</h3>
+                </div>
+
+                <div class="result-item">
+                    <span>Confidence Score</span>
+                    <h3 id="confidenceScore">-</h3>
+                    <div class="progress-bar">
+                        <div id="confidenceBar"></div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <footer>
+            <p>Powered by AI Image Classification</p>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
